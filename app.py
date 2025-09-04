@@ -11,12 +11,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 decision_tree_model = joblib.load("model.pkl")
 
 # We need some data to evaluate the model
-data = {
-    'age': [25, 35, 45, 20, 30, 50],
-    'income': [40000, 60000, 80000, 30000, 50000, 90000],
-    'loan_approved': [1, 1, 1, 0, 0, 1]
-}
-df = pd.DataFrame(data)
+df = pd.read_excel("loan_data.xlsx")
 X_test = df[['age', 'income']]
 y_test = df['loan_approved']
 
